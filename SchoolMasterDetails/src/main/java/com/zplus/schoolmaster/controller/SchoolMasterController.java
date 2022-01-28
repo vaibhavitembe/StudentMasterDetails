@@ -44,7 +44,7 @@ public class SchoolMasterController {
     }
 
     @GetMapping("/getSchoolId/{schoolId}")
-    private ResponseEntity getBySchoolId(@PathVariable Integer schoolId) {
+     private ResponseEntity getBySchoolId(@PathVariable Integer schoolId) {
         SchoolMasterModel schoolMasterModel = schoolMasterService.getBySchoolId(schoolId);
         return new ResponseEntity(schoolMasterModel, HttpStatus.OK);
     }

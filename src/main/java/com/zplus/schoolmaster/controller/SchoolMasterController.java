@@ -33,7 +33,6 @@ public class SchoolMasterController {
     private ResponseEntity UpdateSchool(@RequestBody SchoolMasterDto schoolMasterDto){
         Boolean flag =schoolMasterService.UpdateSchool(schoolMasterDto);
         return new ResponseEntity(flag,HttpStatus.OK);
-
     }
     @GetMapping
     private ResponseEntity getAllSchool() {
@@ -46,6 +45,7 @@ public class SchoolMasterController {
         SchoolMasterModel schoolMasterModel = schoolMasterService.getBySchoolId(schoolId);
         return new ResponseEntity(schoolMasterModel, HttpStatus.OK);
     }
+
     @GetMapping("/FindOrderById/")
     private ResponseEntity FindOrderById()
     {
@@ -75,10 +75,7 @@ public class SchoolMasterController {
 
         List list=schoolMasterService.getBySchoolTodayDate(schoolMasterDateReqDto.getSchoolStartDate(),schoolMasterDateReqDto.getSchoolEndDate());
         return new ResponseEntity(list,HttpStatus.OK);
-
-
     }
-
     @GetMapping("/FindGroupById/")
     private ResponseEntity FindGroupById()
     {
@@ -90,7 +87,6 @@ public class SchoolMasterController {
     {
         List list=schoolMasterService.findByContactNoAndName(schoolConcectNoNameReqDto);
         return new ResponseEntity(list,HttpStatus.OK);
-
     }
 
     @GetMapping(value = "/findSumOfAmountGroupByAddress/")
